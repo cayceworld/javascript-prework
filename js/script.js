@@ -1,12 +1,11 @@
 {
 	// 1: kamień, 2: papier, 3: nożyce.
-	function playGame(playerNumber) {
+	
+	const playGame = function(playerInput){
 		clearMessages();
-		let playerInput = playerNumber;
 		const randomNumber = Math.floor(Math.random() * 3 + 1);
 		console.log('Wylosowana liczba to: ' + randomNumber);
-
-		function getMoveName(argMoveId) {
+		const getMoveName = function (argMoveId) {
 			if (argMoveId == 1) {
 				return 'kamień';
 			}
@@ -21,7 +20,7 @@
 		const argPlayerMove = getMoveName(playerInput);
 		const argComputerMove = getMoveName(randomNumber);
 
-		function displayResult(argComputerMove, argPlayerMove) {
+		const displayResult = function (argComputerMove, argPlayerMove) {
 			printMessage('Zagrałem ' + argComputerMove + ', a ty ' + argPlayerMove + '.');
 			if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
 				printMessage('Ty wygrywasz!');
